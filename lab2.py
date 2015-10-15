@@ -11,13 +11,16 @@ __license__ = "MIT License"
 """
 Instructions: Add a function to to get input from the user and use that
 function in name_that_shape()
+
 The function should prompt the user for input until a legal value is
 entered. A legal value is any integer.
+
 """
 
 def name_that_shape():
     """
     For a given number of sides in a regular polygon, returns the shape name
+
     Inputs | Expected Outputs
     -------------------------
       < 3  | Error
@@ -30,12 +33,23 @@ def name_that_shape():
       9    | nonagon
       10   | decagon
       > 10 | Error
+
     Errors: ValueError when input is a string or float
+
     """
+    sides = get_user_input
 
-    sides = int(raw_input("Number of sides:"))
 
-    if sides == 3:
+#name_that_shape()
+
+def get_user_input(sides):
+
+    output = ""
+
+    output = raw_input("Number of sides:")
+
+
+   if sides == 3:
         print("triangle")
     elif sides == 4:
         print("quadrilateral")
@@ -54,17 +68,12 @@ def name_that_shape():
     else:
         print("Error")
 
-name_that_shape()
 
-def get_user_input():
-    output = " "
+    input_is_an_interger = True
 
-    while True:
-        try:
-            name_that_shape()
-        except ValueError:
-            sides = int(sides)
+    while not input_is_an_interger:
+    #while loop so we can get input
+    #check whether input is correct form
+        output =(raw_input("Number of sides:"))
 
-    output = int(raw_input ("Number of sides:"))
-
-get_user_input()
+    return int(raw_input("Number of sides:"))
