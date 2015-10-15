@@ -54,18 +54,17 @@ def name_that_shape():
     else:
         print("Error")
 
-# name_that_shape()
+name_that_shape()
 
 def get_user_input():
-
     output = " "
 
-    sides = raw_input("Number of sides:")
+    while True:
+        try:
+            name_that_shape()
+        except ValueError:
+            sides = int(sides)
 
-   # input_is_an_interger = True
-
-    while not input_is_an_interger:
-
-    return int(raw_input ("Number of sides:"))
+    output = int(raw_input ("Number of sides:"))
 
 get_user_input()
