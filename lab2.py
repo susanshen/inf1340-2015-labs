@@ -37,10 +37,19 @@ def name_that_shape():
     Errors: ValueError when input is a string or float
 
     """
+    sides = get_user_input
 
-    sides = int(raw_input("Number of sides:"))
 
-    if sides == 3:
+#name_that_shape()
+
+def get_user_input(sides):
+
+    output = ""
+
+    output = raw_input("Number of sides:")
+
+
+   if sides == 3:
         print("triangle")
     elif sides == 4:
         print("quadrilateral")
@@ -59,4 +68,12 @@ def name_that_shape():
     else:
         print("Error")
 
-# name_that_shape()
+
+    input_is_an_interger = True
+
+    while not input_is_an_interger:
+    #while loop so we can get input
+    #check whether input is correct form
+        output =(raw_input("Number of sides:"))
+
+    return int(raw_input("Number of sides:"))
