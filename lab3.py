@@ -17,10 +17,12 @@ def days_in_month(month):
         days = 30
     elif month == "January" or month == "March" or month == "May" \
             or month == "July" or month == "August" or month == "October" or month == "December":
-        days = 31
+        days = 31 #interger
     elif month == "February":
-        days = "28 or 29"
+        days = 28 or 29 #string
     else:
         raise ValueError
 
     return days
+
+#days_in_month()

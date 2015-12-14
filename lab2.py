@@ -15,6 +15,20 @@ The function should prompt the user for input until a legal value is
 entered. A legal value is any integer.
 """
 
+def get_input():
+    valid_input = False
+    while not valid_input:
+        output = raw_input("Number of sides: ")
+
+        if output.isdigit() or output[0] == "-" and output[1:].isdigit():
+            get_input = int(output)
+            valid_input = True
+
+        else:
+            print ("Please enter an integer.")
+
+    return get_input
+
 def name_that_shape():
     """
     For a given number of sides in a regular polygon, returns the shape name
@@ -32,8 +46,7 @@ def name_that_shape():
       > 10 | Error
     Errors: ValueError when input is a string or float
     """
-
-    sides = int(raw_input("Number of sides:"))
+    sides = get_input()
 
     if sides == 3:
         print("triangle")
@@ -54,17 +67,5 @@ def name_that_shape():
     else:
         print("Error")
 
-name_that_shape()
-
-def get_user_input():
-    output = " "
-
-    while True:
-        try:
-            name_that_shape()
-        except ValueError:
-            sides = int(sides)
-
-    output = int(raw_input ("Number of sides:"))
-
-get_user_input()
+#name_that_shape()
+#get_input()
